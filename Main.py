@@ -5,7 +5,7 @@ import PGHandler
 import Common
 import Utils
 
-pgHandler = PGHandler.PGHandler(Common.TEST_DB_URL)
+pgHandler = PGHandler.PGHandler(Common.DB_URL)
 
 def UpdateInterestInfo(address, interest, totalInterest, productId):
     timestamp = int(time.time())
