@@ -1,0 +1,3 @@
+schedule
+sqlalchemy
+psycopg2-binary
