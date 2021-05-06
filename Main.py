@@ -60,7 +60,11 @@ def main():
                         datefmt="%Y/%m/%d %H:%M:%S",
                         level=logging.DEBUG)
 
-    schedule.every().day.at("1:00").do(CalcInterest())
+    schedule.every().day.at("01:00").do(CalcInterest)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 if __name__ == "__main__":
     main()
