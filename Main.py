@@ -31,8 +31,9 @@ def GetAccountOrderInfos(offset, limit):
 
     for i in infoList:
         succ, balance = pgHandler.GetBalanceOfAccount(i.get("address"), i.get("product_id"))
-        if balance != 0:
-            i["balance"] = balance
+        if succ:
+            if balance != 0:
+                i["balance"] = balance
 
     return infoList
 

@@ -18,7 +18,7 @@ class PGHandler():
             result = s.query(ViolasBankDepositOrder.product_id, ViolasBankDepositOrder.address).distinct(ViolasBankDepositOrder.product_id, ViolasBankDepositOrder.address).offset(offset).limit(limit).all()
         except OperationalError:
             logging.error(f"Database operation failed.")
-            return False, None
+            return False, []
         finally:
             s.close()
 
